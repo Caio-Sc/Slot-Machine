@@ -1,0 +1,17 @@
+{
+    "name": "Slot Machine",
+    "short_name": "Slots",
+    "description": "Um slot machine simples",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3f51b5",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
+  
