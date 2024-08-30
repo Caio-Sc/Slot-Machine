@@ -10,31 +10,18 @@ body {
   align-items: center;
 }
 
-.container {
+.container-botao {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  align-items: center;
-}
-.container .maquina {
-  width: calc(3.5 * 79px);
-  height: calc(3 * 79px);
-  border: 1px solid black;
-  padding: calc(0.3 * 79px);
-  display: flex;
-  justify-content: space-between;
-}
-.container .maquina .roda {
-  border: 1px solid black;
-  width: 79px;
-  height: calc(3 * 79px);
-  background-image: url("../slotreel.webp");
-  background-repeat: repeat-y;
-  background-position: 0 0;
-}
-.container .botao {
+  align-items: left;
   margin-top: 20px;
 }
-.container .botao #girarbotao {
+.container-botao .botao {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.container-botao .botao #girarbotao {
   height: 100px;
   width: 276.5px;
   padding: 10px 20px;
@@ -44,12 +31,99 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
-.container .botao #girarbotao:hover {
+.container-botao .botao #girarbotao:hover {
   background-color: #676767;
 }
-.container .botao #girarbotao:disabled {
+.container-botao .botao #girarbotao:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+
+@keyframes vitoria {
+  0% {
+    background: linear-gradient(45deg, orange 0%, yellow 100%);
+    box-shadow: 0 0 80px orange;
+  }
+  100% {
+    background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+.vitoria {
+  animation: vitoria 200ms steps(2, end) infinite;
+}
+
+.container-checkbox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 20px;
+  margin-right: -150px;
+}
+.container-checkbox .checkbox {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.container-checkbox .checkbox #checkbox {
+  height: 100px;
+  width: 276.5px;
+  padding: 10px 20px;
+  background-color: #353434;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container-checkbox .checkbox #checkbox:hover {
+  background-color: #676767;
+}
+.container-checkbox .checkbox #checkbox:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.container .maquina {
+  width: 276.5px;
+  height: 237px;
+  border: 1px solid black;
+  padding: 23.7px;
+  display: flex;
+  background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 3%;
+  z-index: 1;
+  justify-content: space-between;
+}
+.container .maquina .roda {
+  border: 1px solid black;
+  width: 79px;
+  height: 237px;
+  background-image: url("../slotreel.webp");
+  background-repeat: repeat-y;
+  box-shadow: 1px -2px 20px rgba(0, 0, 0, 0.2) inset;
+  background-position: 0 0;
+  z-index: 1;
+}
+.container .personagem {
+  margin-left: -85px;
+  margin-top: 175px;
+  z-index: 2;
+  visibility: hidden;
+}
+.container .personagem img {
+  width: 102.8571428571px;
+  height: 144px;
 }
 
 /*# sourceMappingURL=style.css.map */

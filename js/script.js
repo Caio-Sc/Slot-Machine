@@ -5,6 +5,11 @@ tempo_por_icone = 100;
 const indexes = [0, 0, 0];
 // Seleciona o botão pelo ID
 const botao = document.getElementById('girarbotao');
+const checkboxRoubo = document.getElementById('roubo');
+const checkboxPersonagem = document.getElementById('personagem');
+const gifPersonagem = document.getElementById('gifPersonagem');
+let roubo = false;
+
 
 const rodar = (roda, atraso = 0, alvo = null) =>{
     var delta = (atraso + 2) * quantia_icones + Math.round(Math.random() * quantia_icones);
@@ -33,7 +38,6 @@ const rodar = (roda, atraso = 0, alvo = null) =>{
 
 const rodarTodas = () =>{
     botao.disabled = true;
-    let roubo = false;
     const alvos = window.timesRolled && window.timesRolled%2 && roubo ? [1,1,1] : null;
     if (!window.timesRolled) window.timesRolled = 0;
 	window.timesRolled++;
@@ -46,11 +50,18 @@ const rodarTodas = () =>{
         console.log(indexes);
         
         if (indexes[0] === indexes[1] && indexes[0] === indexes[2]){
-            console.log('Ganhou');
+            document.querySelector('.maquina').classList.add('vitoria');
+            setTimeout(() => document.querySelector('.maquina').classList.remove('vitoria'), 3000);
+            gifPersonagem.src = "personagemGanhando.gif";  // GIF de vitória
+        }
+        else{
+            //console.log('Perdeu');
+            gifPersonagem.src = "personagemPerdendo.gif";  // GIF de derrota
         }
         //setTimeout(rodarTodas, 3000);
     })
     .finally(() => {
+        setTimeout(() => gifPersonagem.src = "personagemTorcendo.gif", 3000);  // GIF de torcida
         botao.disabled = false;
     });
 }
@@ -59,4 +70,22 @@ const rodarTodas = () =>{
 // Adiciona um evento de clique ao botão
 botao.addEventListener('click', function() {
     rodarTodas();
+});
+
+checkboxRoubo.addEventListener('change', function() {
+    if (checkboxRoubo.checked){
+        roubo = true;
+    }
+    else{
+        roubo = false;
+    }
+});
+
+checkboxPersonagem.addEventListener('change', function() {
+    if (checkboxPersonagem.checked){
+        gifPersonagem.style.setProperty("visibility", "visible");
+    }
+    else{
+        gifPersonagem.style.setProperty("visibility", "hidden");
+    }
 });

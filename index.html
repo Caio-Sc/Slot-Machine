@@ -7,18 +7,34 @@
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
-    <div class="container">
-        <div class="maquina">
-            <div class="roda"></div>
-            <div class="roda"></div>
-            <div class="roda"></div>
-        </div>
-        <div class="botao">    
-            <button id="girarbotao">Tente a Sorte!</button>
-        </div>
+    <div class="container-botao">
+        <div class="container">
+            <div class="maquina">
+                <div class="roda"></div>
+                <div class="roda"></div>
+                <div class="roda"></div>
+            </div>
+            <div class="personagem">
+                <img id="gifPersonagem" src="personagemTorcendo.gif" alt="torcendo">
+            </div>
+            <div class = "container-checkbox">
+                <label>
+                    <input type="checkbox" id="personagem" name="personagem" value="personagem">
+                    Ativar Personagem
+                </label><br>
+                
+                <label>
+                    <input type="checkbox" id="roubo" name="roubo" value="roubo">
+                    Ativar Roubo
+                </label><br>
+            </div>
     </div>
+    <div class="botao">    
+        <button id="girarbotao">Tente a Sorte!</button>
+    </div>
+</div>
     <script src="js/script.js"
-    integrity="sha384-T0Zyc9F1HaH9tAh0tVFVjwdCLM5OwcXrZlYrirJDWKUPwsLqfiUxH4nhEf1fmz5q"
+    integrity="sha384-8IYFO8CHVsFqc3uvdwWRcdQWN4iyCSFV3qycckss172J0+A5EbLGG6XrN8U8u6be"
     crossorigin="anonymous"></script>
 </body>
 </html>

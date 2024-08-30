@@ -1,6 +1,9 @@
 $largura_icone: 79px;
 $altura_icone: 79px;
 $quantia_icones: 9;
+$largura_personagem: 360px;
+$altura_personagem: 504px;
+
 
 html, body {
     height: 100%;
@@ -14,48 +17,125 @@ body {
     align-items: center;
 }
 
+.container-botao{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  // Altere de column para row
+    align-items: left;
+    margin-top: 20px;
+    
+    .botao {
+        margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
+        margin-left: 25px;  // Adiciona espaço entre a máquina e o botão
+            #girarbotao {
+                height: 100px;
+                width: 3.5 * $largura_icone;
+                padding: 10px 20px;
+                background-color: #353434;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: darken(grey, 10%);
+                }
+                &:disabled {
+                    background-color: grey;
+                    cursor: not-allowed;
+                }
+        }
+    }
+}
+
+@keyframes vitoria {
+    0% { background: linear-gradient(45deg, orange 0%, yellow 100%); 
+    box-shadow: 0 0 80px orange }
+    100% { background: linear-gradient(45deg, grey 0%, lightgrey 100%); box-shadow: -2px 2px 3px rgba(black, 0.3); }
+}
+
+.vitoria {
+    animation: vitoria 200ms steps(2, end) infinite;
+}
+
+.container-checkbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  // Altere de column para row
+    align-items: left;
+    margin-top: 20px;
+    margin-right: -150px;
+    
+    .checkbox {
+        margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
+        margin-left: 25px;  // Adiciona espaço entre a máquina e o botão
+            #checkbox {
+                height: 100px;
+                width: 3.5 * $largura_icone;
+                padding: 10px 20px;
+                background-color: #353434;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: darken(grey, 10%);
+                }
+                &:disabled {
+                    background-color: grey;
+                    cursor: not-allowed;
+                }
+        }
+    }
+}
+
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center; // Centraliza o conteúdo horizontalmente
-
+    flex-direction: row;  // Altere de column para row
+    align-items: center;
+    position: relative;  // Adiciona position relative para controle de z-index
+    
     .maquina {
-        width: calc(3.5 * #{$largura_icone});
-        height: calc(3 * #{$altura_icone});
+        width: 3.5 * $largura_icone;
+        height: 3 * $altura_icone;
         border: 1px solid black;
-        padding: calc(0.3 * #{$largura_icone});
+        padding: 0.3 * $largura_icone;
         display: flex;
+        background: linear-gradient(45deg, grey 0%, lightgrey 100%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(white, 0.6);
+        border-right: 1px solid rgba(white, 0.6);
+        border-left: 1px solid rgba(black, 0.4);
+        border-bottom: 1px solid rgba(black, 0.4);
+        border-radius: 3%;
+        z-index: 1;
         justify-content: space-between;
 
         .roda {
             border: 1px solid black;
             width: $largura_icone;
-            height: calc(3 * #{$altura_icone});
+            height: 3 * $altura_icone;
             background-image: url("../slotreel.webp");
             background-repeat: repeat-y;
+            box-shadow: 1px -2px 20px rgba(0, 0, 0, 0.2) inset;
             background-position: 0 0;
+            z-index: 1;
         }
     }
 
-    .botao {
-        margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
-        #girarbotao {
-            height: 100px;
-            width: 3.5 * $largura_icone;
-            padding: 10px 20px;
-            background-color: #353434;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+    .personagem {
+        margin-left: -85px;  // Ajuste o valor para controlar a sobreposição
+        margin-top: 175px;  // Ajuste o valor para controlar a sobreposição
+        z-index: 2;
+        visibility: hidden;  // Oculta o personagem inicialmente
 
-            &:hover {
-                background-color: darken(grey, 10%);
-            }
-            &:disabled {
-                background-color: grey;
-                cursor: not-allowed;
-            }
+        img {
+            width: calc($largura_personagem / 3.5);  // Ajuste o tamanho conforme necessário
+            height: calc($altura_personagem / 3.5);  // Manter a proporção do GIF
+            //border: 2px solid #000;
+            //border-radius: 8px;
+            //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     }
 }
