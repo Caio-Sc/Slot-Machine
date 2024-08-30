@@ -1,0 +1,55 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(45deg, grey 0%, lightgray 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .maquina {
+  width: calc(3.5 * 79px);
+  height: calc(3 * 79px);
+  border: 1px solid black;
+  padding: calc(0.3 * 79px);
+  display: flex;
+  justify-content: space-between;
+}
+.container .maquina .roda {
+  border: 1px solid black;
+  width: 79px;
+  height: calc(3 * 79px);
+  background-image: url("../slotreel.webp");
+  background-repeat: repeat-y;
+  background-position: 0 0;
+}
+.container .botao {
+  margin-top: 20px;
+}
+.container .botao #girarbotao {
+  height: 100px;
+  width: 276.5px;
+  padding: 10px 20px;
+  background-color: #353434;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .botao #girarbotao:hover {
+  background-color: #676767;
+}
+.container .botao #girarbotao:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=style.css.map */

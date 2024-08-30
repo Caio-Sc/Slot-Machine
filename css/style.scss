@@ -1,0 +1,61 @@
+$largura_icone: 79px;
+$altura_icone: 79px;
+$quantia_icones: 9;
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(45deg, grey 0%, lightgray 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centraliza o conteúdo horizontalmente
+
+    .maquina {
+        width: calc(3.5 * #{$largura_icone});
+        height: calc(3 * #{$altura_icone});
+        border: 1px solid black;
+        padding: calc(0.3 * #{$largura_icone});
+        display: flex;
+        justify-content: space-between;
+
+        .roda {
+            border: 1px solid black;
+            width: $largura_icone;
+            height: calc(3 * #{$altura_icone});
+            background-image: url("../slotreel.webp");
+            background-repeat: repeat-y;
+            background-position: 0 0;
+        }
+    }
+
+    .botao {
+        margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
+        #girarbotao {
+            height: 100px;
+            width: 3.5 * $largura_icone;
+            padding: 10px 20px;
+            background-color: #353434;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken(grey, 10%);
+            }
+            &:disabled {
+                background-color: grey;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
