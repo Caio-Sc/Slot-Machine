@@ -61,26 +61,25 @@ body {
   margin-top: 20px;
   margin-right: -150px;
 }
-.container-checkbox .checkbox {
-  margin-top: 20px;
-  margin-left: 25px;
-}
-.container-checkbox .checkbox #checkbox {
-  height: 100px;
-  width: 276.5px;
-  padding: 10px 20px;
+.container-checkbox input[type=checkbox] {
+  margin-bottom: 15px;
   background-color: #353434;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.container-checkbox .checkbox #checkbox:hover {
-  background-color: #676767;
+.container-checkbox input[type=checkbox]:hover {
+  color: black;
 }
-.container-checkbox .checkbox #checkbox:disabled {
+.container-checkbox input[type=checkbox]:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+.container-checkbox input[type=checkbox]:checked {
+  background-color: #353434;
+  color: #fff;
+  accent-color: #353434;
 }
 
 .container {

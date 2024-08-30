@@ -66,27 +66,31 @@ body {
     margin-top: 20px;
     margin-right: -150px;
     
-    .checkbox {
-        margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
-        margin-left: 25px;  // Adiciona espaço entre a máquina e o botão
-            #checkbox {
-                height: 100px;
-                width: 3.5 * $largura_icone;
-                padding: 10px 20px;
-                background-color: #353434;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-    
-                &:hover {
-                    background-color: darken(grey, 10%);
-                }
-                &:disabled {
-                    background-color: grey;
-                    cursor: not-allowed;
-                }
+    input[type="checkbox"]  {
+        //margin-top: 20px;  // Adiciona espaço entre a máquina e o botão
+        //margin-left: 25px;  // Adiciona espaço entre a máquina e o botão
+        //height: 10px;
+        //width: 3.5 * $largura_icone;
+        margin-bottom: 15px;
+        background-color: #353434;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: darken(grey, 100%);
         }
+        &:disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+        &:checked {
+            background-color: #353434;
+            color: #fff;
+            accent-color: #353434;
+        }
+        
     }
 }
 
