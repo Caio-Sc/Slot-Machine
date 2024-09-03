@@ -1,12 +1,12 @@
-// Nome do cache
-const CACHE_NAME = 'Slot-Machine';
+// Nome do cache com versão
+const CACHE_VERSION = 'v1.0.1'; // Atualize essa versão quando mudar o conteúdo
+const CACHE_NAME = `Slot-Machine-${CACHE_VERSION}`;
 
 // Arquivos que serão cacheados
 const urlsToCache = [
     '/',
     '/index.html',
     '/css/style.css',
-    '/css/style.css.map',
     '/favicon.png',
     '/personagemGanhando.gif',
     '/personagemPerdendo.gif',
@@ -15,7 +15,6 @@ const urlsToCache = [
     '/js/script.js'
 ];
 
-
 // Instalação do Service Worker
 self.addEventListener('install', event => {
     event.waitUntil(
@@ -23,6 +22,10 @@ self.addEventListener('install', event => {
             .then(cache => {
                 console.log('Cache aberto');
                 return cache.addAll(urlsToCache);
+            })
+            .then(() => {
+                // Força o Service Worker a se ativar imediatamente
+                return self.skipWaiting();
             })
     );
 });
@@ -51,10 +54,15 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.map(cacheName => {
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        // Se o cache não está na whitelist, delete-o
                         return caches.delete(cacheName);
                     }
                 })
             );
+        })
+        .then(() => {
+            // Controla todas as páginas abertas para usar o novo Service Worker
+            return self.clients.claim();
         })
     );
 });

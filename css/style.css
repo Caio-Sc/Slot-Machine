@@ -34,9 +34,6 @@ body {
   border: 2px solid #000000;
   cursor: pointer;
 }
-.container-botao .botao #girarbotao:hover {
-  background-color: #854219;
-}
 .container-botao .botao #girarbotao:disabled {
   background-color: #854219;
   cursor: not-allowed;

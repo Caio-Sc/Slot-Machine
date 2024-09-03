@@ -42,10 +42,9 @@ body {
                 border: 2px solid #000000;
                 //border-radius: 5px;
                 cursor: pointer;
-    
-                &:hover {
-                    background-color: darken(#D86E2C, 20%);
-                }
+                // &:hover {
+                //     background-color: darken(#D86E2C, 20%);
+                // }
                 &:disabled {
                     background-color: darken(#D86E2C, 20%);
                     cursor: not-allowed;
