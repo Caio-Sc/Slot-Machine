@@ -1,15 +1,16 @@
 {
-    "name": "Slot Machine",
-    "short_name": "Slots",
+    "name": "Capivarinha",
+    "version": "1.0",
+    "short_name": "Capivarinha",
     "description": "Um slot machine simples",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#3f51b5",
+    "background_color": "#222222",
+    "theme_color": "#D86E2C",
     "icons": [
       {
         "src": "/favicon.png",
-        "sizes": "192x192",
+        "sizes": "512x512",
         "type": "image/png"
       }
     ]
