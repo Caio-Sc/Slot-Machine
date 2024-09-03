@@ -26,16 +26,19 @@ body {
   margin-left: 180px;
 }
 .container-botao .botao #girarbotao {
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
   height: 100px;
   width: 355.5px;
   padding: 10px 20px;
   background-color: #D86E2C;
-  color: #fff;
-  border: 2px solid #000000;
+  border: none;
   cursor: pointer;
 }
 .container-botao .botao #girarbotao:disabled {
   background-color: #854219;
+  color: black;
   cursor: not-allowed;
 }
 

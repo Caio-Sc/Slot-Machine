@@ -30,23 +30,27 @@ body {
     width: 720px;
     
     .botao {
-
+        
         margin-top: 15px;  // Adiciona espaço entre a máquina e o botão
         margin-left: 180px;  // Adiciona espaço entre a máquina e o botão
             #girarbotao {
+                font-weight: bold;
+                color: black;
+                font-size: 20px;
                 height: 100px;
                 width: 4.5 * $largura_icone;
                 padding: 10px 20px;
                 background-color: #D86E2C;
-                color: #fff;
-                border: 2px solid #000000;
+                //color: #fff;
+                border: none;
                 //border-radius: 5px;
                 cursor: pointer;
                 // &:hover {
-                //     background-color: darken(#D86E2C, 20%);
-                // }
-                &:disabled {
-                    background-color: darken(#D86E2C, 20%);
+                    //     background-color: darken(#D86E2C, 20%);
+                    // }
+                    &:disabled {
+                        background-color: darken(#D86E2C, 20%);
+                        color: darken(black, 20%);
                     cursor: not-allowed;
                 }
         }
@@ -69,7 +73,7 @@ body {
     flex-direction: column;  // Altere de column para row
     align-items: left;
     margin-left: 100px;
-
+    
     input[type="checkbox"]  {
 
         margin-bottom: 15px;
