@@ -1,5 +1,5 @@
 // Nome do cache com versão
-const CACHE_VERSION = 'v1.0.1'; // Atualize essa versão quando mudar o conteúdo
+const CACHE_VERSION = 'v1.0.0'; // Atualize essa versão quando mudar o conteúdo
 const CACHE_NAME = `Slot-Machine-${CACHE_VERSION}`;
 
 // Arquivos que serão cacheados
