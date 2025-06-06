@@ -4,18 +4,13 @@ Uma máquina caça-níquel desenvolvida em **HTML**, **SCSS** e **JavaScript**, 
 
 ## 📌 Visão geral
 
-Este projeto é uma versão simples e encantadora de uma slot machine:
+Este projeto é uma versão simples de uma slot machine:
 
 - Interface responsiva feita em **HTML5**
 - Estilização moderna com **SCSS**, incluindo animações de giro e efeitos visuais
 - Lógica do jogo implementada em **JavaScript**, controlando símbolos, apostas e resultados
 - Um personagem animado que entra em cena ao **ganhar** (celebração) ou **perder** (reação de frustração)
 
-É ideal para quem quer entender como montar um jogo casual na web usando tecnologias front‑end puras.
-
-## 🚀 Demonstração
-
-Insira aqui um GIF ou link para vídeo mostrando a slot machine em funcionamento (preferencialmente com animação do personagem).
 
 ## 🛠️ Tecnologias usadas
 
