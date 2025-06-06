@@ -1,6 +1,6 @@
 # 🎰 Slot Machine
 
-Uma máquina caça-níquel divertida desenvolvida em **HTML**, **SCSS** e **JavaScript**, com um personagem animado que reage à vitória ou derrota.
+Uma máquina caça-níquel desenvolvida em **HTML**, **SCSS** e **JavaScript**, com um personagem animado que reage à vitória ou derrota.
 
 ## 📌 Visão geral
 
